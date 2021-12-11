@@ -79,7 +79,6 @@ public class Menu {
         System.out.println("12. Tìm sách có giá thấp nhất");
         System.out.println("0. Exit");
         System.out.println("==========================");
-        ;
     }
 }
 

@@ -87,7 +87,7 @@ public class ManagerBook {
         System.out.println(lists[index]);
     }
 
-    public static Book findLowestPriceBook(Book[] lists) {
+    public static void findLowestPriceBook(Book[] lists) {
         double minPrice = lists[0].getPrice();
         int index = 0;
         for (int i = 1; i < lists.length; i++) {
@@ -96,7 +96,7 @@ public class ManagerBook {
                 index = i;
             }
         }
-        return lists[index];
+        System.out.println(lists[index]);
     }
 
     public static void findAnyBook(Scanner scanner, Book[] lists) {
