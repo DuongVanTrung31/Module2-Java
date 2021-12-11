@@ -11,7 +11,6 @@ import java.util.Scanner;
 public class ManagerBook {
 
 
-
     public static void displayListBooks(Book[] bookList) {
         for (Book b : bookList) {
             System.out.println(b);
@@ -54,7 +53,7 @@ public class ManagerBook {
 
     public static void createListBooks(Scanner scan, Book[] lists) {
         for (int i = 0; i < lists.length; i++) {
-            System.out.println("Nhập thể loại sách thứ " + (i+1) + " :");
+            System.out.println("Nhập thể loại sách thứ " + (i + 1) + " :");
             System.out.println("1. Sách khoa học");
             System.out.println("2. Sách tiểu thuyết");
             int type = scan.nextInt();
@@ -100,10 +99,77 @@ public class ManagerBook {
         return lists[index];
     }
 
-//    public static Book findAnyBook(Scanner scanner,Book[] lists) {
-//        for (:
-//             ) {
-//
-//        }
-//    }
+    public static void findAnyBook(Scanner scanner, Book[] lists) {
+        System.out.println("Nhập thể loại muốn tìm: ");
+        String category = scanner.nextLine();
+        for (int i = 0; i < lists.length; i++) {
+            if (lists[i] instanceof ScienceBook) {
+                if (((ScienceBook) lists[i]).getCategory().equals(category)) {
+                    System.out.println(lists[i]);
+                }
+            }
+        }
+    }
+
+    public static void findAuthorBook(Scanner scanner, Book[] lists) {
+        System.out.println("Nhập tác giả muốn tìm: ");
+        String author = scanner.nextLine();
+        for (int i = 0; i < lists.length; i++) {
+            if (lists[i] instanceof NovelBook) {
+                if (((NovelBook) lists[i]).getAuthor().equals(author)) {
+                    System.out.println(lists[i]);
+                }
+            }
+        }
+    }
+
+    public static double avgScienceBooks(Book[] lists) {
+        double sumScience = 0;
+        double count = 0;
+        for (int i = 0; i < lists.length; i++) {
+            if (lists[i] instanceof ScienceBook) {
+                sumScience += lists[i].getPrice();
+                count++;
+            }
+        }
+        return (sumScience/count);
+    }
+
+    public static void findAllSciencebooks(Book[] lists) {
+        for (int i = 0; i < lists.length; i++) {
+            if(lists[i] instanceof ScienceBook) {
+                System.out.println(lists[i]);
+            }
+        }
+    }
+
+    public static void findAllNovelBook(Book[] lists) {
+        for (int i = 0; i < lists.length; i++) {
+            if(lists[i] instanceof NovelBook) {
+                System.out.println(lists[i]);
+            }
+        }
+    }
+
+    public static void findAllBookHasSamePrice(Scanner scanner, Book[] lists) {
+        System.out.println("Nhập giá tiền sách:");
+        double price = scanner.nextDouble();
+        for (Book b: lists) {
+            if(b.getPrice() == price) {
+                System.out.println(b);
+            }
+        }
+    }
+
+    public static void findAllBookRangePrices(Scanner scanner, Book[] lists) {
+        System.out.println("Nhập khoảng giá từ : ");
+        double range1 = scanner.nextDouble();
+        System.out.println("---> đến : ");
+        double range2 = scanner.nextDouble();
+        for (Book b: lists) {
+            if(b.getPrice() >= range1 && b.getPrice() <= range2) {
+                System.out.println(b);
+            }
+        }
+    }
 }
