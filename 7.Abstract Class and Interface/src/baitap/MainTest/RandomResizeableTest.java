@@ -19,9 +19,9 @@ public class RandomResizeableTest {
         System.out.println("               <------------------ After change ------------------->        ");
         for (Shape shape:shapes){
             if (shape instanceof Circle) {
-                ((Circle) shape).resize(Math.floor(Math.random()*100));
+                ((Circle) shape).resize(Math.floor(Math.random()*100 + 1));
             } else if (shape instanceof Rectangle) {
-                ((Rectangle) shape).resize(Math.floor(Math.random()*100));
+                ((Rectangle) shape).resize(Math.floor(Math.random()*100 + 1));
             }
             System.out.println("After-resizeale: " + shape);
         }
