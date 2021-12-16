@@ -79,7 +79,7 @@ public class StudentManger implements Manager<Student> {
     @Override
     public void sortByAvgMark() {
 
-        AgitrrayList.sort(students, new Comparator<Student>() {
+        ArrayList.sort(students, new Comparator<Student>() {
             @Override
             public int compare(Student o1, Student o2) {
                 return o1.getAverageMark() > o2.getAverageMark() ? 1 : -1;
