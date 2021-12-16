@@ -78,12 +78,13 @@ public class StudentManger implements Manager<Student> {
 
     @Override
     public void sortByAvgMark() {
-//        students.sort(students, new Comparator<Student>() {
-//            @Override
-//            public int compare(Student o1, Student o2) {
-//                return o1.getAverageMark() > o2.getAverageMark() ? 1 : -1;
-//            }
-//        });
+
+        AgitrrayList.sort(students, new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                return o1.getAverageMark() > o2.getAverageMark() ? 1 : -1;
+            }
+        });
     }
 
     @Override
@@ -92,6 +93,6 @@ public class StudentManger implements Manager<Student> {
         for (Student student: students) {
             sum += student.getAverageMark();
         }
-        return sum/students.size();
+        return sum;
     }
 }

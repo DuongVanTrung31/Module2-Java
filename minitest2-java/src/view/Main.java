@@ -17,6 +17,11 @@ public class Main {
             System.out.println("1. Hiển thị tất cả");
             System.out.println("2. Thêm sinh viên");
             System.out.println("3. Tìm theo id");
+            System.out.println("4. Xóa sinh viên theo id");
+            System.out.println("5. Sửa thông tin");
+            System.out.println("6. Sắp xếp điểm TB");
+            System.out.println("7. Tính tổng điểm");
+            System.out.println("8. Exit!!!");
             choice = scanner.nextInt();
             switch (choice) {
                 case 1:
@@ -38,11 +43,23 @@ public class Main {
                     studentManger.searchById(id);
                     break;
                 case 4:
+                    System.out.println("Nhập id");
+                    int id1= scanner.nextInt();
+                    studentManger.removeById(id1);
                     break;
                 case 5:
+                    System.out.println("Nhập id");
+                    int id2= scanner.nextInt();
+                    studentManger.editById(id2,scanner);
                     break;
                 case 6:
+                    studentManger.sortByAvgMark();
                     break;
+                case 7:
+                    studentManger.sumAvgMark();
+                    break;
+                case 0:
+                    System.exit(0);
             }
 
         } while (choice != 0);
