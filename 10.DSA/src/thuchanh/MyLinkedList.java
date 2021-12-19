@@ -1,6 +1,5 @@
 package thuchanh;
 
-import org.w3c.dom.Node;
 
 public class MyLinkedList {
     private static class Node {
