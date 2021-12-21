@@ -20,7 +20,7 @@ public class BubbleSort {
     public static void printArray(int o, int[] a) {
         System.out.printf("%d: ", o);
         for (int i = 0; i < a.length; i++){
-            System.out.printf("%-4d", a[i]);
+            System.out.printf("%-6d", a[i]);
         }
         System.out.println();
     }
