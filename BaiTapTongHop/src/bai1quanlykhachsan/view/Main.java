@@ -21,6 +21,7 @@ public class Main {
                 case 1:
                     System.out.println("Phiếu điền thông tin cá nhân");
                     personManager.add();
+                    scanner.nextLine();
                     break;
                 case 2:
                     header();
@@ -43,7 +44,7 @@ public class Main {
                     scanner.nextLine();
                     System.out.println("Nhập số CMND khách hàng");
                     String cmndDel = scanner.nextLine();
-                    System.out.println(personManager.removeByCMND(cmndDel));;
+                    System.out.println(personManager.removeByCMND(cmndDel));
                     break;
                 case 0:
                     break;

@@ -17,6 +17,7 @@ public class PersonManager {
     }
 
     public void add() {
+        scanner.nextLine();
         try {
             System.out.println("Điền tên họ");
             String name = scanner.nextLine();
@@ -42,8 +43,7 @@ public class PersonManager {
 
     public void displayAll() {
         if (!list.isEmpty()) {
-            Set<Map.Entry<Person, Hotel>> setH = list.entrySet();
-            for (Map.Entry<Person, Hotel> e : setH) {
+            for (Map.Entry<Person, Hotel> e : list.entrySet()) {
                 e.getKey().display();
                 e.getValue().displayRoom();
             }
@@ -53,17 +53,19 @@ public class PersonManager {
     }
 
     public Person removeByCMND(String numCMND) {
+        boolean check = true;
         if (!list.isEmpty()) {
             Person person1;
             for (Person e : list.keySet()) {
-                if (!(e.getCMND().equals(numCMND))) {
-                    System.out.println("Không tìm thấy số CMND đó trong thông tin khách trọ");
-                } else {
+                if (e.getCMND().equals(numCMND)) {
                     person1 = e;
                     list.remove(e);
                     System.out.println("Xóa thành công");
                     return person1;
                 }
+            }
+            if(check) {
+                System.out.println("Không tìm thấy khách hàng có số CMND đó");
             }
         } else {
             System.out.println("Chưa có khách nàm sao tìm");
@@ -72,14 +74,17 @@ public class PersonManager {
     }
 
     public void findByName(String name) {
+        boolean check = true;
         if (!list.isEmpty()) {
             for (Map.Entry<Person, Hotel> e : list.entrySet()) {
-                if (!(e.getKey().getName().equals(name))) {
-                    System.out.println("Không tìm thấy tên khách trọ!!!");
-                } else {
+                if (e.getKey().getName().equals(name)) {
+                    check = false;
                     e.getKey().display();
                     e.getValue().displayRoom();
                 }
+            }
+            if(check){
+                System.out.println("Không tìm thấy khách hàng đó");
             }
         } else {
             System.out.println("Chưa có khách nàm sao tìm");
@@ -87,12 +92,16 @@ public class PersonManager {
     }
 
     public void getMoneyByCMND(String CMND) {
+        boolean check = true;
         if (!list.isEmpty()) {
             for (Map.Entry<Person, Hotel> e : list.entrySet()) {
-                if (!(e.getKey().getCMND().equals(CMND))) {
-                    System.out.println("Không tìm thấy CMND khách trọ đó!!!!");
+                if (e.getKey().getCMND().equals(CMND)) {
+                    check = false;
+                    System.out.println("Giá tiền khách phải trả sau " + e.getValue().getDaysInRoom() + " ngày là: " + countMoney(e.getValue()));
                 }
-                System.out.println("Giá tiền khách phải trả sau " + e.getValue().getDaysInRoom() + " ngày là: " + countMoney(e.getValue()));
+            }
+            if(check){
+                System.out.println("Không tìm thấy khách hàng có số CMND đó");
             }
         } else {
             System.out.println("Chưa có khách nàm sao tìm");

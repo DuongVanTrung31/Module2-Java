@@ -54,7 +54,7 @@ public class Person {
     }
 
     public void display() {
-        System.out.printf("\n%-15S", name);
+        System.out.printf("%-15S", name);
         System.out.printf("%-15s", date);
         System.out.printf("%-15s", CMND);
     }
