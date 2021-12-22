@@ -42,14 +42,7 @@ public class Hotel {
         System.out.printf("%-15S", type);
         System.out.printf("%-15.2f", price);
         System.out.printf("%-15s", daysInRoom);
+        System.out.println();
     }
 
-    @Override
-    public String toString() {
-        return "Hotel{" +
-                "type='" + type + '\'' +
-                ", price=" + price +
-                ", daysInRoom=" + daysInRoom +
-                '}';
-    }
 }

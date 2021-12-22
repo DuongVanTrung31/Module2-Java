@@ -59,4 +59,12 @@ public class Person {
         System.out.printf("%-15s", CMND);
     }
 
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", date='" + date + '\'' +
+                ", CMND='" + CMND + '\'' +
+                '}';
+    }
 }
