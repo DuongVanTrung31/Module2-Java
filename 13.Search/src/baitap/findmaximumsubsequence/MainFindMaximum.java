@@ -1,4 +1,4 @@
-package baitap.bai1;
+package baitap.findmaximumsubsequence;
 
 import java.util.LinkedList;
 import java.util.Scanner;

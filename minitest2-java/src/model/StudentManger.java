@@ -77,14 +77,13 @@ public class StudentManger implements Manager<Student> {
     }
 
     @Override
-    public void sortByAvgMark() {
-
-        ArrayList.sort(students, new Comparator<Student>() {
-            @Override
-            public int compare(Student o1, Student o2) {
-                return o1.getAverageMark() > o2.getAverageMark() ? 1 : -1;
-            }
-        });
+    public  void sortByAvgMark() {
+//        ArrayList.sort(students, new Comparator<Student>() {
+//            @Override
+//            public int compare(Student o1, Student o2) {
+//                return o1.getAverageMark() > o2.getAverageMark() ? 1 : -1;
+//            }
+//        });
     }
 
     @Override
