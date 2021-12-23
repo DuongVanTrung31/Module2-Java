@@ -41,7 +41,7 @@ public class Main {
                 case 4:
                     System.out.println("Nhập id sinh viên");
                     int idFind = scanner.nextInt();
-                    studenManager.findById(idFind);
+                    System.out.println(studenManager.findById(idFind));;
                     break;
                 case 5:
                     studenManager.sortByAVGMark();
