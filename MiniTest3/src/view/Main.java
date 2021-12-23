@@ -36,7 +36,7 @@ public class Main {
                 case 3:
                     System.out.println("Nhập id sinh viên");
                     int idDel = scanner.nextInt();
-                    studenManager.remove(idDel);
+                    System.out.println(studenManager.remove(idDel));;
                     break;
                 case 4:
                     System.out.println("Nhập id sinh viên");

@@ -25,7 +25,7 @@ public class StudenManager {
                 studentUpdate = studentList.get(i);
             }
         }
-        if(studentUpdate != null) {
+        if (studentUpdate != null) {
             System.out.println("Nhập vào tên mới");
             studentUpdate.setName(scanner.nextLine());
             System.out.println("Nhập vào tuổi mới");
@@ -36,6 +36,9 @@ public class StudenManager {
             studentUpdate.setPointPhysical(scanner.nextDouble());
             System.out.println("Nhập điểm Hóa mới");
             studentUpdate.setPointChemistry(scanner.nextDouble());
+            System.out.println("Sửa thành công");
+        } else {
+            System.out.println("Không tìm thấy id trên");
         }
         return studentUpdate;
     }
@@ -47,7 +50,12 @@ public class StudenManager {
                 studentRemove = s;
             }
         }
-        studentList.remove(studentRemove);
+        if (studentRemove != null) {
+            System.out.println("Xóa thành công");
+            studentList.remove(studentRemove);
+        } else {
+            System.out.println("Không tìm thấy id trên");
+        }
         return studentRemove;
     }
 
@@ -57,6 +65,9 @@ public class StudenManager {
             if (s.getId() == id) {
                 studentFind = s;
             }
+        }
+        if (studentFind == null) {
+            System.out.println("Không tìm thấy id trên");
         }
         return studentFind;
     }
@@ -74,8 +85,8 @@ public class StudenManager {
                 studentMaximum = student;
             }
         }
-        for (Student s:studentList) {
-            if(s.AVGMark() == max) {
+        for (Student s : studentList) {
+            if (s.AVGMark() == max) {
                 System.out.println(s);
             }
         }
