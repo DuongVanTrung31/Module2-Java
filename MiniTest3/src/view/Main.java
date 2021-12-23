@@ -31,7 +31,7 @@ public class Main {
                 case 2:
                     System.out.println("Nhập id sinh viên");
                     int idUpdate = scanner.nextInt();
-                    studenManager.updateStudent(idUpdate);
+                    System.out.println(studenManager.updateStudent(idUpdate));;
                     break;
                 case 3:
                     System.out.println("Nhập id sinh viên");
@@ -47,7 +47,8 @@ public class Main {
                     studenManager.sortByAVGMark();
                     break;
                 case 6:
-                    studenManager.findByAVGMark();
+                    System.out.println("Sinh viên có điểm cao nhất");
+                    studenManager.findByAVGMark();;
                     break;
                 case 7:
                     System.out.println("Danh sách các sinh viên");

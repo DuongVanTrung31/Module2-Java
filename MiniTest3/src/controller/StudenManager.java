@@ -74,6 +74,11 @@ public class StudenManager {
                 studentMaximum = student;
             }
         }
+        for (Student s:studentList) {
+            if(s.AVGMark() == max) {
+                System.out.println(s);
+            }
+        }
         return studentMaximum;
     }
 
