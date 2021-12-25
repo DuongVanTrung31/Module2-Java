@@ -7,25 +7,38 @@ public class CopyFileText {
     public void copyFile(String source, String target) {
         File sourceFile = new File(source);
         File targetFile = new File(target);
+        BufferedReader bufferedReader = null;
+        BufferedWriter bufferedWriter = null;
         try {
             if(!sourceFile.exists()){
                 throw new FileNotFoundException();
             }
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(sourceFile));
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(targetFile));
-            String line= "";
+            bufferedReader = new BufferedReader(new FileReader(sourceFile));
+            bufferedWriter = new BufferedWriter(new FileWriter(targetFile));
+            int line;
             int count = 0;
-            while ((line = bufferedReader.readLine()) != null){
-                for (int i = 0; i < line.length(); i++) {
-                    bufferedWriter.write(line.charAt(i));
-                    count++;
-                }
-                bufferedWriter.write("\n");
+            while ((line = bufferedReader.read()) != -1){
+                bufferedWriter.write((char) line);// Enter xuống dòng tính là 2 ký tự
+                count++;
             }
-            bufferedWriter.close();
             System.err.println("Số ký tự là: " + count);
         } catch (Exception e) {
             System.err.println(e.getMessage());
+        } finally {
+            if(bufferedReader != null) {
+                try {
+                    bufferedReader.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if(bufferedWriter != null) {
+                try {
+                    bufferedWriter.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 }

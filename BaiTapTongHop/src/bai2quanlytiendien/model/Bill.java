@@ -1,4 +1,4 @@
 package bai2quanlytiendien.model;
 
-public class Receipt {
+public class Bill {
 }
