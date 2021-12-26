@@ -16,7 +16,7 @@ public class StudentManager implements Serializable {
     List<Student> listStudent;
     {
         try {
-            File fileStudent = new File("src/bai3thuviensach/file/Student.dat");
+            File fileStudent = new File("src/bai3thuviensach/file/Student.txt");
             if(!fileStudent.exists()) {
                 fileStudent.createNewFile();
             }

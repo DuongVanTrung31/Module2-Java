@@ -21,7 +21,7 @@ public class TicketManager implements Serializable {
 
     {
         try {
-            File fileTicket = new File("src/bai3thuviensach/file/Ticket.dat");
+            File fileTicket = new File("src/bai3thuviensach/file/Ticket.txt");
             if (!fileTicket.exists()) {
                 fileTicket.createNewFile();
             }
