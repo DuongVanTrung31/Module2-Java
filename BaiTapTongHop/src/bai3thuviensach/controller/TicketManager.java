@@ -2,7 +2,11 @@ package bai3thuviensach.controller;
 
 import bai3thuviensach.model.Student;
 import bai3thuviensach.model.Ticket;
+import iostream.IOStream;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -10,12 +14,26 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
 
-public class TicketManager {
-    Scanner scanner = new Scanner(System.in);
+public class TicketManager implements Serializable {
+    IOStream<List<Ticket>> fileStreamTicket;
     List<Ticket> ticketList;
+    Scanner scanner = new Scanner(System.in);
 
-    public TicketManager() {
-        this.ticketList = new ArrayList<>();
+    {
+        try {
+            File fileTicket = new File("src/bai3thuviensach/file/Ticket.dat");
+            if (!fileTicket.exists()) {
+                fileTicket.createNewFile();
+            }
+            fileStreamTicket = new IOStream<>(fileTicket);
+            if (fileTicket.length() > 20) {
+                ticketList = fileStreamTicket.readData();
+            } else {
+                ticketList = new ArrayList<>();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public Ticket createTicket(Student student) {
@@ -31,8 +49,9 @@ public class TicketManager {
             String nameBook = scanner.nextLine();
             ticket = new Ticket(idBook, date, returnDay, nameBook, student);
             ticketList.add(ticket);
+            fileStreamTicket.saveData(ticketList);
         } catch (Exception e) {
-            System.err.println("Nhập sai kiểu dữ liêu");
+            System.err.println(e.getMessage());
             createTicket(student);
         }
         return ticket;
@@ -67,7 +86,7 @@ public class TicketManager {
                 check = false;
             }
         }
-        if(check) {
+        if (check) {
             System.out.println("Ko sinh viên nào (quá) đến hạn trả");
         }
     }

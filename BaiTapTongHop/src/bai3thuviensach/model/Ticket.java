@@ -1,8 +1,9 @@
 package bai3thuviensach.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Ticket {
+public class Ticket implements Serializable {
     private int idBook;
     private LocalDate beginDate;
     private int returnDate;

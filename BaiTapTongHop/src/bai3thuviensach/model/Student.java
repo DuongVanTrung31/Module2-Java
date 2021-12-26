@@ -1,6 +1,8 @@
 package bai3thuviensach.model;
 
-public class Student {
+import java.io.Serializable;
+
+public class Student implements Serializable {
     private String name;
     private String id;
     private String birthday;

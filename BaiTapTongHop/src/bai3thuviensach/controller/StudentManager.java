@@ -1,18 +1,39 @@
 package bai3thuviensach.controller;
 
 import bai3thuviensach.model.Student;
+import iostream.IOStream;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
-public class StudentManager {
-    List<Student> listStudent = new ArrayList<>();
+public class StudentManager implements Serializable {
+    IOStream<List<Student>> fileStreamStudent;
+    List<Student> listStudent;
+    {
+        try {
+            File fileStudent = new File("src/bai3thuviensach/file/Student.dat");
+            if(!fileStudent.exists()) {
+                fileStudent.createNewFile();
+            }
+            fileStreamStudent = new IOStream<>(fileStudent);
+            if(fileStudent.length() > 0) {
+                listStudent = fileStreamStudent.readData();
+            } else {
+                listStudent = new ArrayList<>();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     Scanner scanner = new Scanner(System.in);
 
     public Student createStudent() {
-        Student student= null;
+        Student student = null;
         try {
             System.out.println("Nhập tên sinh viên");
             String name = scanner.nextLine();
@@ -24,14 +45,15 @@ public class StudentManager {
             String clazz = scanner.nextLine();
             for (Student s : listStudent) {
                 if (s.getId().equals(id)) {
-                    System.out.println("Trùng mã sinh viên, nhập lại !");
+                    System.err.println("Trùng mã sinh viên, nhập lại !");
                     return null;
                 }
             }
             student = new Student(name, id, date, clazz);
             listStudent.add(student);
+            fileStreamStudent.saveData(listStudent);
         } catch (Exception e) {
-            System.err.println("Nhập sai kiểu dữ liệu");
+            System.err.println(e.getMessage());
             createStudent();
         }
         return student;
@@ -46,6 +68,7 @@ public class StudentManager {
         }
         if (student != null) {
             listStudent.remove(student);
+            fileStreamStudent.saveData(listStudent);
         }
         return student;
     }
@@ -56,9 +79,6 @@ public class StudentManager {
             if (st.getId().equalsIgnoreCase(id)) {
                 student = st;
             }
-        }
-        if (student == null) {
-            System.out.println("Sinh viên ko tồn tại");
         }
         return student;
     }

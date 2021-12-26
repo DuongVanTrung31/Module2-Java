@@ -11,6 +11,7 @@ public class Main {
     private static final StudentManager studentManager = new StudentManager();
     private static final TicketManager ticketManager = new TicketManager();
     public static void main(String[] args) {
+
         int choice;
         do {
             System.out.println("------Menu-----");
@@ -46,7 +47,7 @@ public class Main {
                     System.out.println("Nhập vào mã sinh viên muốn mượn ");
                     String idStudent = scanner.nextLine();
                     Student student = studentManager.searchById(idStudent);
-                    if(student != null) {
+                    if (student != null) {
                         System.out.println(ticketManager.createTicket(student));
                         System.out.println("Đã xác nhận");
                     } else {
@@ -65,8 +66,9 @@ public class Main {
                     ticketManager.displayMonthEnd();
                     break;
             }
-        } while (choice1 !=0);
+        } while (choice1 != 0);
     }
+
     public static void menuStudent() {
         int choice2;
         do {
@@ -80,17 +82,34 @@ public class Main {
             choice2 = Integer.parseInt(scanner.nextLine());
             switch (choice2) {
                 case 1:
-                    System.out.println(studentManager.createStudent());
+                    Student student = studentManager.createStudent();
+                    if(student != null){
+                        System.out.println(student);
+                        System.out.println("Thêm thành công");
+                    } else {
+                        System.out.println("Lỗi");
+                    }
                     break;
                 case 2:
                     System.out.println("Nhập vào mã sinh viên");
                     String idStudentDel = scanner.nextLine();
-                    System.out.println(studentManager.deleteStudent(idStudentDel));
+                    Student delStudent = studentManager.deleteStudent(idStudentDel);
+                    if(delStudent != null){
+                        System.out.println(delStudent);
+                        System.out.println("xóa thành công");
+                    } else {
+                        System.out.println("Không tồn tại sinh viên đó");
+                    }
                     break;
                 case 3:
                     System.out.println("Nhập vào mã sinh viên");
                     String idStudentFind = scanner.nextLine();
-                    System.out.println(studentManager.searchById(idStudentFind));
+                    Student findStudent = studentManager.searchById(idStudentFind);
+                    if(findStudent != null){
+                        System.out.println(findStudent);
+                    } else {
+                        System.out.println("Không tồn tại sinh viên đó");
+                    }
                     break;
                 case 4:
                     studentManager.displayList();
