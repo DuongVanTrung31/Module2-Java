@@ -18,21 +18,15 @@ public class TicketManager implements Serializable {
     IOStream<List<Ticket>> fileStreamTicket;
     List<Ticket> ticketList;
     Scanner scanner = new Scanner(System.in);
+    File fileTicket;
 
     {
-        try {
-            File fileTicket = new File("src/bai3thuviensach/file/Ticket.txt");
-            if (!fileTicket.exists()) {
-                fileTicket.createNewFile();
-            }
-            fileStreamTicket = new IOStream<>(fileTicket);
-            if (fileTicket.length() > 20) {
-                ticketList = fileStreamTicket.readData();
-            } else {
-                ticketList = new ArrayList<>();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+        fileTicket = new File("src/bai3thuviensach/file/Ticket.txt");
+        fileStreamTicket = new IOStream<>(fileTicket, ticketList);
+        if (fileTicket.length() == 0) {
+            ticketList = new ArrayList<>();
+        } else {
+            ticketList = fileStreamTicket.readData();
         }
     }
 

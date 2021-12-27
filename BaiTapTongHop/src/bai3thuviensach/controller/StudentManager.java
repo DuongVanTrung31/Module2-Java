@@ -14,22 +14,18 @@ import java.util.Scanner;
 public class StudentManager implements Serializable {
     IOStream<List<Student>> fileStreamStudent;
     List<Student> listStudent;
+    File fileStudent;
+
     {
-        try {
-            File fileStudent = new File("src/bai3thuviensach/file/Student.txt");
-            if(!fileStudent.exists()) {
-                fileStudent.createNewFile();
-            }
-            fileStreamStudent = new IOStream<>(fileStudent);
-            if(fileStudent.length() > 0) {
-                listStudent = fileStreamStudent.readData();
-            } else {
-                listStudent = new ArrayList<>();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+        fileStudent = new File("src/bai3thuviensach/file/Student.txt");
+        fileStreamStudent = new IOStream<>(fileStudent, listStudent);
+        if (fileStudent.length() == 0) {
+            listStudent = new ArrayList<>();
+        } else {
+            listStudent = fileStreamStudent.readData();
         }
     }
+
     Scanner scanner = new Scanner(System.in);
 
     public Student createStudent() {
@@ -46,7 +42,7 @@ public class StudentManager implements Serializable {
             for (Student s : listStudent) {
                 if (s.getId().equals(id)) {
                     System.err.println("Trùng mã sinh viên, nhập lại !");
-                    return null;
+                    return createStudent();
                 }
             }
             student = new Student(name, id, date, clazz);
@@ -54,7 +50,6 @@ public class StudentManager implements Serializable {
             fileStreamStudent.saveData(listStudent);
         } catch (Exception e) {
             System.err.println(e.getMessage());
-            createStudent();
         }
         return student;
     }

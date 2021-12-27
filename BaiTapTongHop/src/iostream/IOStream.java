@@ -4,66 +4,37 @@ package iostream;
 import java.io.*;
 
 
+public class IOStream<E> {
+    private E e;
+    private File file;
 
-public class IOStream <T> {
-    private T t;
-    private FileOutputStream fos;
-    private ObjectOutputStream oos;
-    private FileInputStream fis;
-    private ObjectInputStream ois;
-
-    public IOStream(File pathName) throws IOException {
-        this.fos = new FileOutputStream(pathName, true);
-        this.oos = new ObjectOutputStream(fos);
-        this.fis = new FileInputStream(pathName);
-        this.ois = new ObjectInputStream(fis);
+    public IOStream(File files, E element) {
+        this.file = files;
+        this.e = element;
     }
 
-    public synchronized void saveData(T e) {
-
+    public synchronized void saveData(E e) {
         try {
+            FileOutputStream fos = new FileOutputStream(file, false);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(e);
-        } catch (IOException ex) {
+            fos.close();
+            oos.close();
+        } catch (Exception ex) {
             ex.printStackTrace();
-        } finally {
-            if (oos != null) {
-                try {
-                    oos.close();
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
-            }
-            if (fos != null) {
-                try {
-                    fos.close();
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
-            }
         }
     }
 
-    public synchronized T readData() {
+    public synchronized E readData() {
         try {
-            t = (T) ois.readObject();
-        } catch (IOException | ClassNotFoundException ex) {
+            FileInputStream fis = new FileInputStream(file);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            e = (E) ois.readObject();
+            fis.close();
+            ois.close();
+        } catch (Exception ex) {
             ex.printStackTrace();
-        } finally {
-            if (fis != null) {
-                try {
-                    fis.close();
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
-            }
-            if (ois != null) {
-                try {
-                    ois.close();
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
-            }
         }
-        return t;
+        return e;
     }
 }
