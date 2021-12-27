@@ -4,7 +4,6 @@ import bai3thuviensach.model.Student;
 import iostream.IOStream;
 
 import java.io.File;
-import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -12,13 +11,12 @@ import java.util.List;
 import java.util.Scanner;
 
 public class StudentManager implements Serializable {
-    IOStream<List<Student>> fileStreamStudent;
     List<Student> listStudent;
-    File fileStudent;
+    File fileStudent = new File("src/bai3thuviensach/file/Student.txt");
+    IOStream<List<Student>> fileStreamStudent = new IOStream<>(fileStudent, listStudent);
+    Scanner scanner = new Scanner(System.in);
 
-    {
-        fileStudent = new File("src/bai3thuviensach/file/Student.txt");
-        fileStreamStudent = new IOStream<>(fileStudent, listStudent);
+    public StudentManager() {
         if (fileStudent.length() == 0) {
             listStudent = new ArrayList<>();
         } else {
@@ -26,7 +24,6 @@ public class StudentManager implements Serializable {
         }
     }
 
-    Scanner scanner = new Scanner(System.in);
 
     public Student createStudent() {
         Student student = null;

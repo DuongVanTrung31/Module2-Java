@@ -15,14 +15,12 @@ import java.util.List;
 import java.util.Scanner;
 
 public class TicketManager implements Serializable {
-    IOStream<List<Ticket>> fileStreamTicket;
     List<Ticket> ticketList;
     Scanner scanner = new Scanner(System.in);
-    File fileTicket;
+    File fileTicket = new File("src/bai3thuviensach/file/Ticket.txt");
+    IOStream<List<Ticket>> fileStreamTicket = new IOStream<>(fileTicket, ticketList);
 
-    {
-        fileTicket = new File("src/bai3thuviensach/file/Ticket.txt");
-        fileStreamTicket = new IOStream<>(fileTicket, ticketList);
+    public TicketManager() {
         if (fileTicket.length() == 0) {
             ticketList = new ArrayList<>();
         } else {
