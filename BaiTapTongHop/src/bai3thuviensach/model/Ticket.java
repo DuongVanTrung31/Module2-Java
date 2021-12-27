@@ -12,12 +12,12 @@ public class Ticket implements Serializable {
 
     @Override
     public String toString() {
-        return "Ticket{" +
+        return  student.toString() + "\n" +
+                "Ticket{" +
                 "numTicket=" + idBook +
                 ", beginDate=" + beginDate +
                 ", returnDate=" + returnDate +
-                ", idBook='" + nameBook + '\'' +
-                ", student=" + student.toString() +
+                ", idBook='" + nameBook +
                 '}';
     }
 

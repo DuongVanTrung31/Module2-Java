@@ -4,16 +4,15 @@ import bai3thuviensach.model.Student;
 import iostream.IOStream;
 
 import java.io.File;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
-public class StudentManager implements Serializable {
+public class StudentManager {
     List<Student> listStudent;
     File fileStudent = new File("src/bai3thuviensach/file/Student.txt");
-    IOStream<List<Student>> fileStreamStudent = new IOStream<>(fileStudent, listStudent);
+    IOStream<List<Student>> fileStreamStudent = new IOStream<>(fileStudent);
     Scanner scanner = new Scanner(System.in);
 
     public StudentManager() {

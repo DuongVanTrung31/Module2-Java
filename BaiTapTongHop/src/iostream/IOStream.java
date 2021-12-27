@@ -8,9 +8,8 @@ public class IOStream<E> {
     private E e;
     private File file;
 
-    public IOStream(File files, E element) {
+    public IOStream(File files) {
         this.file = files;
-        this.e = element;
     }
 
     public synchronized void saveData(E e) {

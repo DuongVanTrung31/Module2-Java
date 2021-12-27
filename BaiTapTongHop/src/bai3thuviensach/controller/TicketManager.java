@@ -5,8 +5,6 @@ import bai3thuviensach.model.Ticket;
 import iostream.IOStream;
 
 import java.io.File;
-import java.io.IOException;
-import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -14,11 +12,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
 
-public class TicketManager implements Serializable {
+public class TicketManager {
     List<Ticket> ticketList;
     Scanner scanner = new Scanner(System.in);
     File fileTicket = new File("src/bai3thuviensach/file/Ticket.txt");
-    IOStream<List<Ticket>> fileStreamTicket = new IOStream<>(fileTicket, ticketList);
+    IOStream<List<Ticket>> fileStreamTicket = new IOStream<>(fileTicket);
 
     public TicketManager() {
         if (fileTicket.length() == 0) {
