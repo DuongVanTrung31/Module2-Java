@@ -37,7 +37,7 @@ public class Main {
                 case 6:
                     break;
                 case 7:
-                    studentManager.write((List<Student>) studentManager);
+                    studentManager.write();
                     break;
                 case 8:
                     break;

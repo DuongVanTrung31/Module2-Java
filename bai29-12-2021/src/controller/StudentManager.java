@@ -132,7 +132,7 @@ public class StudentManager {
 
     }
 
-    public void write(List<Student> students) {
+    public void write() {
         try (BufferedWriter bufferedWriter =
                      new BufferedWriter(new FileWriter("student.csv"))) {
             StringBuilder sb = new StringBuilder();
@@ -143,9 +143,9 @@ public class StudentManager {
             sb.append("điểm trung bình");
             sb.append('\n');
 
-            if (students.size() > 0) {
+            if (studentList.size() > 0) {
                 for (Student s :
-                        students) {
+                        studentList) {
                     sb.append(s.getName());
                     sb.append(',');
                     sb.append(s.getAge());
@@ -165,7 +165,7 @@ public class StudentManager {
         }
     }
     public void read() {
-        
+
     }
 }
 
