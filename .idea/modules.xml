@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/1.Introduction to Java/1.Introduction to Java.iml" filepath="$PROJECT_DIR$/1.Introduction to Java/1.Introduction to Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/10.DSA/10.DSA.iml" filepath="$PROJECT_DIR$/10.DSA/10.DSA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/11.Stack,Queue/11.Stack,Queue.iml" filepath="$PROJECT_DIR$/11.Stack,Queue/11.Stack,Queue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/12.JavaCollection/12.JavaCollection.iml" filepath="$PROJECT_DIR$/12.JavaCollection/12.JavaCollection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/13.Search/13.Search.iml" filepath="$PROJECT_DIR$/13.Search/13.Search.iml" />
+      <module fileurl="file://$PROJECT_DIR$/14.AlgorithmSort/14.AlgorithmSort.iml" filepath="$PROJECT_DIR$/14.AlgorithmSort/14.AlgorithmSort.iml" />
+      <module fileurl="file://$PROJECT_DIR$/15.Handle Exception/15.Handle Exception.iml" filepath="$PROJECT_DIR$/15.Handle Exception/15.Handle Exception.iml" />
+      <module fileurl="file://$PROJECT_DIR$/16.IO File Text/16.IO File Text.iml" filepath="$PROJECT_DIR$/16.IO File Text/16.IO File Text.iml" />
+      <module fileurl="file://$PROJECT_DIR$/17.IOStream/17.IOStream.iml" filepath="$PROJECT_DIR$/17.IOStream/17.IOStream.iml" />
+      <module fileurl="file://$PROJECT_DIR$/18.Thread/18.Thread.iml" filepath="$PROJECT_DIR$/18.Thread/18.Thread.iml" />
+      <module fileurl="file://$PROJECT_DIR$/19.String and regex/19.String and regex.iml" filepath="$PROJECT_DIR$/19.String and regex/19.String and regex.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2.Vong lap trong Java/2.Vong lap trong Java.iml" filepath="$PROJECT_DIR$/2.Vong lap trong Java/2.Vong lap trong Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3.Mang va phuong thuc Java/3.Mang va phuong thuc Java.iml" filepath="$PROJECT_DIR$/3.Mang va phuong thuc Java/3.Mang va phuong thuc Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/4.Lop va doi tuong trong Java/4.Lop va doi tuong trong Java.iml" filepath="$PROJECT_DIR$/4.Lop va doi tuong trong Java/4.Lop va doi tuong trong Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/5.Access modifier, static method, static property/5.Access modifier, static method, static property.iml" filepath="$PROJECT_DIR$/5.Access modifier, static method, static property/5.Access modifier, static method, static property.iml" />
+      <module fileurl="file://$PROJECT_DIR$/6.Tinh ke thua trong Java/6.Tinh ke thua trong Java.iml" filepath="$PROJECT_DIR$/6.Tinh ke thua trong Java/6.Tinh ke thua trong Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/7.Abstract Class and Interface/7.Abstract Class and Interface.iml" filepath="$PROJECT_DIR$/7.Abstract Class and Interface/7.Abstract Class and Interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/8.CleanCode/8.CleanCode.iml" filepath="$PROJECT_DIR$/8.CleanCode/8.CleanCode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/9.TDD/9.TDD.iml" filepath="$PROJECT_DIR$/9.TDD/9.TDD.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BaiTapThemAnimal/BaiTapThemAnimal.iml" filepath="$PROJECT_DIR$/BaiTapThemAnimal/BaiTapThemAnimal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BaiTapTongHop/BaiTapTongHop.iml" filepath="$PROJECT_DIR$/BaiTapTongHop/BaiTapTongHop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BaiTapVeNha/BaiTapVeNha.iml" filepath="$PROJECT_DIR$/BaiTapVeNha/BaiTapVeNha.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MiniTest3/MiniTest3.iml" filepath="$PROJECT_DIR$/MiniTest3/MiniTest3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Module2-Java.iml" filepath="$PROJECT_DIR$/.idea/Module2-Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bai29-12-2021/bai29-12-2021.iml" filepath="$PROJECT_DIR$/bai29-12-2021/bai29-12-2021.iml" />
+      <module fileurl="file://$PROJECT_DIR$/btvn2/btvn2.iml" filepath="$PROJECT_DIR$/btvn2/btvn2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/minitest2-java/minitest2-java.iml" filepath="$PROJECT_DIR$/minitest2-java/minitest2-java.iml" />
+    </modules>
+  </component>
+</project>

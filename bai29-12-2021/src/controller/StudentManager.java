@@ -73,7 +73,7 @@ public class StudentManager {
     }
 
     public List<Student> displayPointsUpper() {
-        List<Student> newStudentList;
+        List<Student> newStudentList = new ArrayList<>();
         newStudentList = (List<Student>) studentList.stream().map(student -> student.getPointAverage() >= 7.5);
         newStudentList.forEach(System.out::println);
         return newStudentList;
@@ -94,6 +94,9 @@ public class StudentManager {
             int age = Integer.parseInt(scanner.nextLine());
             if (age >= 18 && age <= 60) {
                 System.out.println("Nhập giới tính");
+                System.out.println("1.Male");
+                System.out.println("2.Female");
+                System.out.println("3.Other");
                 int choice = Integer.parseInt(scanner.nextLine());
                 String gender = "";
                 switch (choice) {
