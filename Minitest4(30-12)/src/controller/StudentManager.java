@@ -116,7 +116,7 @@ public class StudentManager {
     }
 
     public ArrayList<Student> findMaxPoint () {
-        ArrayList<Student> studentsBest = null;
+        ArrayList<Student> studentsBest = new ArrayList<>();
         double max = 0;
         for (Student s:listStudent) {
             if(s.avgPoint() > max){
