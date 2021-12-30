@@ -41,7 +41,7 @@ public class StudentManager {
         double pointChem = Double.parseDouble(scanner.nextLine());
         if (checkAge(age) && checkPoint(pointMath) && checkPoint(pointChem) && checkPoint(pointPhy)) {
             listStudent.add(new Student(name, age, pointMath, pointPhy, pointChem));
-            writeFile(listStudent,PATH_NAME);
+            writeFile(PATH_NAME);
             System.out.println("Add student have name = " + name + " successfully!");
         } else {
             System.out.println("Data entry error, please check again!!!");
@@ -72,7 +72,7 @@ public class StudentManager {
                     checkPoint(editStudent.getPointPhysical()) &&
                     checkPoint(editStudent.getPointChemistry())) {
                 listStudent.set(index, editStudent);
-                writeFile(listStudent,PATH_NAME);
+                writeFile(PATH_NAME);
                 System.out.println("Update student have name = " + editStudent.getName() + " successfully!");
             } else {
                 System.out.println("Data entry error, please check again!!!");
@@ -90,7 +90,7 @@ public class StudentManager {
         }
         if(studentDel != null) {
             listStudent.remove(studentDel);
-            writeFile(listStudent,PATH_NAME);
+            writeFile(PATH_NAME);
             System.out.println("Delete student have name = " + studentDel.getName() + " successfully!");
         }
         return studentDel;
@@ -132,10 +132,10 @@ public class StudentManager {
     }
 
 
-    public void writeFile(ArrayList<Student> students, String path){
+    public void writeFile(String path){
         try {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(path));
-            for (Student student : students) {
+            for (Student student : listStudent) {
                 bufferedWriter.write(student.getId()+ "," + student.getName() + "," + student.getAge() + ","
                         + student.getPointMath() + "," + student.getPointPhysical() + "," + student.getPointChemistry() +"\n");
             }

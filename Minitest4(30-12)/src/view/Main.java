@@ -50,6 +50,12 @@ public class Main {
                     System.out.println("List student");
                     students.displayAllStudent();
                     break;
+                case 9:
+                    students.readFile(StudentManager.PATH_NAME);
+                    break;
+                case 10:
+                    students.writeFile(StudentManager.PATH_NAME);
+                    break;
             }
         } while (choice != 0);
     }
@@ -64,6 +70,8 @@ public class Main {
         System.out.println("6.Sort student point Decress");
         System.out.println("7.Find student maxPoint");
         System.out.println("8.Display all student");
+        System.out.println("9.Read file");
+        System.out.println("10.Write file");
         System.out.println("0. Exit");
         System.out.println("Enter choice");
     }
