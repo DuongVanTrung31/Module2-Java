@@ -70,8 +70,8 @@ public class Main {
         System.out.println("6.Sort student point Decress");
         System.out.println("7.Find student maxPoint");
         System.out.println("8.Display all student");
-        System.out.println("9.Read file");
-        System.out.println("10.Write file");
+        System.out.println("9.Read file if you want (defaut: autosave)");
+        System.out.println("10.Write file if you want (defaut: autoread)");
         System.out.println("0. Exit");
         System.out.println("Enter choice");
     }
